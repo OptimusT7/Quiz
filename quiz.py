@@ -36,7 +36,7 @@ def main():
     lives = 3
 
     print_by_char("Welcome to Trivia Challenge!")
-    print_by_char("Note: Type help to see list of useful commands and settings!")
+    print_by_char("Note: Type 'help' to see list of useful commands and settings!")
 
     while loop == "y":
         if lives == 0:
