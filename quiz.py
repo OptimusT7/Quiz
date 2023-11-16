@@ -1,4 +1,4 @@
-from example.questions import *
+from questions import *
 from calc import *
 import os
 import time
