@@ -5,7 +5,8 @@ Quiz.py is the main file, with calc.py being used to run the simple inbuilt calc
 
 Enjoy! :)
 
-Note: Running questions.py or calc.py will not work, you must run quiz.py, and all 3 files must be placed in the same location (or imports adjusted accordingly).
+> [!NOTE]
+> Running questions.py or calc.py will not work, you must run quiz.py, and all 3 files must be placed in the same location (or imports adjusted accordingly).
 
 ## Questions.py Versions
 ### Template Version
