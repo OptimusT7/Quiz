@@ -40,7 +40,18 @@ def main():
 
     while loop == "y":
         if lives == 0:
-            print_by_char(f"Game over! You finished with {points} out of a maximum of {max_points} points. Can you do better next time?")
+            answers = ""
+            if isinstance(ques[ques_num].a, list):
+                for item in ques[ques_num].a:
+                    if ques[ques_num].a.index(item) != len(ques[ques_num].a) - 1:
+                        answers += str(item) + ', '
+                    else:
+                        answers += 'and ' + str(item)
+                answers = f"The answers were: {answers}"
+            else:
+                answers = f"The answer was: {ques[ques_num].a}"
+
+            print_by_char(f"\n\nGame over! You ran out of lives :(\n{answers}\nYou finished with {points} out of a maximum of {max_points} points. Can you do better next time?")
             break
         try:
             print_by_char(f"\nQuestion {ques_num}:\n{ques[ques_num].q}")
@@ -95,7 +106,6 @@ def main():
                 else:
                     print_by_char(f"Correct! You won {ques[ques_num].points} points.")
                 points += ques[ques_num].points
-                ques_num += 1
             else:
                 incorrect = True
 
@@ -111,6 +121,7 @@ Giving Answers:
 Some possible commands:
     help - displays this screen :)
     hint - displays a hint
+    skip - skip the current question
     calc - run a basic calculator
         (Note that you can only use the calculator for questions that allow it.)
     restart - restart the game
@@ -125,6 +136,10 @@ Settings:
         # hint
         elif response == 'hint':
             print_by_char(ques[ques_num].hint)
+            incorrect = False
+
+        elif response == "skip":
+            ques_num += 1
             incorrect = False
 
         # calc
@@ -222,7 +237,6 @@ Settings:
                 print_by_char(f"Lives remaining: {lives}")
             else:
                 print_by_char("Incorrect!")
-            ques_num += 1
 
     if not userquit:
         print_by_char("\nDid you want to play again? (Y/N)")  # Does not work if not running code from terminal/python!!

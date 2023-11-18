@@ -3,6 +3,7 @@ class Question:
         self.q = q # question
         self.a = a # answer - if a number, round to two decimal places if necessary
         # NOTE: Answer can be integer, string, or list! (Capitalisation doesn't matter)
+        # If answer is in list form, ensure you don't enter the same thing twice! (This will stuff up the output given if you run out of hearts on the question)
 
         self.points = points # points given if the question is answered correctly
         self.hint = hint # question hint
