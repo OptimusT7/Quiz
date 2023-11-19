@@ -3,10 +3,12 @@ A simple quiz game designed to allow users to easily create fun little quiz's!
 
 Quiz.py is the main file, with calc.py being used to run the simple inbuilt calculator (you can remove this, and the code for it in quiz.py if you want to), and then questions.py is where the questions are created!
 
+Calc.py can be run be itself, but I recommend only using it for the quiz - any other calculator should be much better to use in other circumstances!
+
 Enjoy! :)
 
 > [!NOTE]
-> Running questions.py or calc.py will not work, you must run quiz.py, and all 3 files must be placed in the same location (or imports adjusted accordingly).
+> Running questions.py will not work, you must run quiz.py, and all 3 files must be placed in the same location (or imports adjusted accordingly).
 
 ## Questions.py Versions
 ### Template Version
