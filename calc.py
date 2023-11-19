@@ -66,10 +66,49 @@ def calculator():
 
     if choice in ('1', '2', '3', '4', '5', '6', '7'):
         if choice in ('6', '7'):
-            num1 = float(input("Enter number: "))
+            successful = False
+            while not successful:
+                num1 = input("Enter number: ")
+                try:
+                    num1 = int(num1)
+                except:
+                    try:
+                        num1 = float(num1)
+                    except:
+                        num1 = input("Please enter a number\n\nEnter number: ")
+                    else:
+                        successful = True
+                else:
+                    successful = True
         else:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            successful = False
+            while not successful:
+                num1 = input("Enter first number: ")
+                try:
+                    num1 = int(num1)
+                except:
+                    try:
+                        num1 = float(num1)
+                    except:
+                        num1 = input("Please enter a number\n\nEnter first number: ")
+                    else:
+                        successful = True
+                else:
+                    successful = True
+            successful = False
+            while not successful:
+                num2 = input("Enter second number: ")
+                try:
+                    num2 = int(num2)
+                except:
+                    try:
+                        num2 = float(num2)
+                    except:
+                        num2 = input("Please enter a number\n\nEnter second number: ")
+                    else:
+                        successful = True
+                else:
+                    successful = True
 
     if choice == '1':
         print(f"{num1} + {num2} = {add(num1, num2)}")
@@ -84,24 +123,91 @@ def calculator():
     elif choice == '6':
         print(f"Square root of {num1} = {square_root(num1)}")
     elif choice == '7':
-        base = float(input("Enter the base: "))
+        base = 0
+        successful = False
+        while not successful:
+            base = input("Enter the base: ")
+            try:
+                base = int(base)
+            except:
+                try:
+                    base = float(base)
+                except:
+                    base = input("Please enter a number\n\nEnter the base: ")
+                else:
+                    successful = True
+            else:
+                successful = True
         print(f"Logarithm base {base} of {num1} = {logarithm(num1, base)}")
-    elif choice == '8':
-        angle = float(input("Enter angle in degrees: "))
-        print(f"sin({angle}) = {trigonometric_operation(angle, 'sin')}")
-    elif choice == '9':
-        angle = float(input("Enter angle in degrees: "))
-        print(f"cos({angle}) = {trigonometric_operation(angle, 'cos')}")
-    elif choice == '10':
-        angle = float(input("Enter angle in degrees: "))
-        print(f"tan({angle}) = {trigonometric_operation(angle, 'tan')}")
+    elif choice in ('8', '9', '10'):
+        angle = 0
+        successful = False
+        while not successful:
+            angle = input("Enter angle in degrees: ")
+            try:
+                angle = int(angle)
+            except:
+                try:
+                    angle = float(angle)
+                except:
+                    angle = input("Please enter a number\n\nEnter angle in degrees: ")
+                else:
+                    successful = True
+            else:
+                successful = True
+        if choice == '8':
+            print(f"sin({angle}) = {trigonometric_operation(angle, 'sin')}")
+        elif choice == '9':
+            print(f"cos({angle}) = {trigonometric_operation(angle, 'cos')}")
+        else:
+            print(f"tan({angle}) = {trigonometric_operation(angle, 'tan')}")
     elif choice == '11':
-        num1 = float(input("Enter the exponent: "))
+        successful = False
+        while not successful:
+            num1 = input("Enter the exponent: ")
+            try:
+                num1 = int(num1)
+            except:
+                try:
+                    num1 = float(num1)
+                except:
+                    num1 = input("Please enter a number\n\nEnter the exponent: ")
+                else:
+                    successful = True
+            else:
+                successful = True
         print(f"e^{num1} = {exponential_function(num1)}")
     elif choice == '12':
-        base = float(input("Enter the base: "))
-        num1 = float(input("Enter the exponent: "))
-        print(f"{base}^^{num1} = {tetration(base, num1)}")
+        num_base = 0
+        successful = False
+        while not successful:
+            num_base = input("Enter the num_base: ")
+            try:
+                num_base = int(num_base)
+            except:
+                try:
+                    num_base = float(num_base)
+                except:
+                    num_base = input("Please enter a number\n\nEnter the num_base: ")
+                else:
+                    successful = True
+            else:
+                successful = True
+        successful = False
+        while not successful:
+            num1 = input("Enter the exponent: ")
+            try:
+                num1 = int(num1)
+            except:
+                try:
+                    num1 = float(num1)
+                except:
+                    num1 = input("Please enter a number\n\nEnter the exponent: ")
+                else:
+                    successful = True
+            else:
+                successful = True
+        print(f"{num_base}^^{num1} = {tetration(num_base, num1)}")
     elif choice == '13':
         print("Exiting the calculator. Goodbye!")
     else:
@@ -112,3 +218,6 @@ def calculator():
         choice = input("Do you want to continue calculating? (Y, N): ").lower().strip()
     if choice == "y":
         calculator()
+
+if __name__ == "__main__":
+    calculator()
