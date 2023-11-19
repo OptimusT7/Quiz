@@ -106,6 +106,7 @@ def main():
                 else:
                     print_by_char(f"Correct! You won {ques[ques_num].points} points.")
                 points += ques[ques_num].points
+                ques_num += 1
             else:
                 incorrect = True
 
